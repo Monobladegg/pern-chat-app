@@ -6,6 +6,8 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors'
 dotenv.config()
 
+const PORT = process.env.PORT || 5001
+
 const app = express()
 
 app.use(cors({
@@ -18,6 +20,6 @@ app.use(cookieParser())
 app.use('/api/auth', authRoute)
 app.use('/api/messages', messageRoute)
 
-app.listen(5000, () => {
-  console.log('Example app listening on port 5000!')
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
 })
